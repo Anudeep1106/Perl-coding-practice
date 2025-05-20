@@ -1,0 +1,10 @@
+#Factorial#
+
+print "enter a number to calculate the factorial \n";
+chomp(my $n=<STDIN>);
+$f=1;
+for (my $i=$n;$i>=1;$i--)
+{
+    $f*=$i;
+}
+print "factorial is: $f \n";
