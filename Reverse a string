@@ -1,0 +1,16 @@
+# Reverse a string
+
+print "enter a string \n";
+chomp(my $s=<STDIN>);
+$r = reverse($s);
+
+$f = false;
+
+if ($s eq $r)
+{
+    print "palindrome \n";
+}
+else
+{
+    print "not palindrome \n";
+}
