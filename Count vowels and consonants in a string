@@ -1,0 +1,21 @@
+# Count vowels and consonants in a string
+
+print "enter a string \n";
+chomp(my $s=<STDIN>);
+my $count=0;
+my $c2=0;
+@a1=split(//,$s);
+foreach my $i(@a1)
+{
+if ($i =~/[aeiou]/)
+{
+    $count++;
+}
+else
+{
+    $c2++;
+}
+}
+
+print "no of vowels: $count \n";
+print "no of consonants: $c2 \n";
