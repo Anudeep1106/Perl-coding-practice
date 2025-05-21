@@ -1,0 +1,18 @@
+# frequency of character count in a string
+
+
+print  "enter a string\n";
+chomp(my $s=<STDIN>);
+
+my %h;
+
+foreach my $i(split //, lc($s))
+{
+    $h{$i}++ if $i;
+}
+
+foreach my $j(sort {$h{$b}<=>$h{$a}} keys %h)
+{
+    
+print "$j:$h{$j}\n";
+}
