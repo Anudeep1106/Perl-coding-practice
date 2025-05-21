@@ -1,0 +1,8 @@
+# Sort array and print in ascending, descending order
+
+@a1=('mango','apple','orange','banana');
+@a1=sort(@a1);
+print "array in ascending order: @a1 \n";
+
+@a2=reverse(@a1);
+print "array in descending order: @a2 \n";
