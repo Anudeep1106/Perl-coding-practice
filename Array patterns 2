@@ -1,0 +1,19 @@
+@a1=(1,2,3,4,5,6);
+
+# Expected output: (6,1,5,2,4,3)
+
+@a2=();
+
+while(@a1)
+{
+    if(@a1)
+    {
+        push @a2,pop @a1;
+    }
+    if(@a1)
+    {
+        push @a2, shift @a1;
+    }
+}
+
+print "@a2\n";
