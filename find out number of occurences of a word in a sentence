@@ -1,0 +1,14 @@
+# find out number of occurences of a word in a sentence
+
+$s="this is is python coding session session";
+@a1=();
+@a1=split(/ /,$s);
+my %h;
+foreach my $i(@a1)
+{
+    $h{$i}++;
+}
+foreach my $j(keys %h)
+{
+    print "$j:$h{$j} \n";
+}
