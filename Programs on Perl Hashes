@@ -1,0 +1,108 @@
+# Programs on Perl Hashes
+
+my %h1=('studa'=>80, 'studb'=>60, 'studc'=>90);
+
+my $s='studd';
+
+  if (exists $h1{$s})
+  {
+  print "$h1{$s}\n";
+  }
+  else
+  {
+    print "key not found\n";
+  }
+  
+------------------------------------------------------------------------------------------------------------------------------------------------
+
+my %h1=(
+'studa'=>{'grade'=>'A', 'age'=>24}, 
+'studb'=>{'grade'=>'B','age'=>26},
+'studc'=>{'grade'=>'A+','age'=>30}
+);
+
+
+foreach my $i(sort keys%h1)
+{
+  my $j=$h1{$i};
+  print "$i: $j->{grade}: $j->{age}\n";
+}
+
+----------------------------------------------------------------------------------------------------------------------------------------
+
+my %h1=(
+'studa'=>{'grade'=>'A', 'age'=>24}, 
+'studb'=>{'grade'=>'B','age'=>26},
+'studc'=>{'grade'=>'A+','age'=>30}
+);
+
+
+print "enter student name\n";
+
+chomp(my $s=<STDIN>);
+
+
+  if (exists $h1{$s}) {
+    print "$s has grade: $h1{$s}{grade}\n";
+  }
+  else
+  {
+    print "student name doesnt exist\n";
+  }
+  
+----------------------------------------------------------------------------------------------------------------------------------
+
+my %h1=(
+'studa'=>{'grade'=>'A', 'age'=>24}, 
+'studb'=>{'grade'=>'B','age'=>26},
+'studc'=>{'grade'=>'A+','age'=>30}
+);
+
+
+print "enter student name\n";
+
+chomp(my $s=<STDIN>);
+
+
+  if (exists $h1{$s}) {
+    delete $h1{$s};
+    print "successfully deleted student:";
+  }
+  else
+  {
+    print "student name doesnt exist\n";
+  }
+  
+foreach my $i(sort keys%h1)
+{
+    my $j= $h1{$i};
+    print "$i: $j->{grade}: $j->{age}\n";
+}
+
+---------------------------------------------------------------------------------------------------------------------------------------
+
+my %h1=(1=>'one',2=>'two');
+ 
+my %h2=(3=>'three',4=>'four');
+
+my %h3=(%h1, %h2);
+
+foreach my $i(sort keys %h3)
+{
+    print "$i: $h3{$i}\n";
+}
+
+-----------------------------------------------------------------------------------------------------------------------------------------
+
+my %h1=(
+    'name1'=>[1,2,3],
+    'name2'=>[4,5,6],
+    'name3'=>[7,8,9]
+);
+
+foreach my $i(sort keys%h1)
+{
+    my $j=$h1{$i}; # We use an array reference to store multiple grades for each student.
+    print "$i has grades: ".join " ", @$j;
+    print "\n";
+}
