@@ -1,0 +1,14 @@
+# fibonacii series
+# Output: 0 1 1 2 3 5 8 13 21 34
+
+sub fib
+{
+    my $n=shift;
+    ($a,$b)=(0,1);
+    for(1 .. $n)
+    {
+        print "$a ";
+        ($a,$b)=($b,$a+$b);
+    }
+}
+&fib(10)
