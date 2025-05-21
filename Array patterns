@@ -1,0 +1,26 @@
+@a1=[1,2,3,4,5,6,7,8,9,10]
+
+# Expected output:  [10,1,8,3,6,5,4,7,2,9]
+
+
+#!/usr/bin/perl
+use strict;
+use warnings;
+
+my @a1 = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+
+my @even = grep { $_ % 2 == 0 } @a1;
+my @odd = grep { $_ % 2 != 0 } @a1;
+
+@even = sort { $b <=> $a } @even;
+@odd = sort { $a <=> $b } @odd;
+
+my @result;
+
+while (@even || @odd) {
+    push @result, shift @even if @even;
+        push @result, shift @odd if @odd;
+}
+
+# Print the rearranged array
+print "(" . join(", ", @result) . ")\n";
