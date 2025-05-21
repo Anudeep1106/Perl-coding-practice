@@ -1,0 +1,14 @@
+# Longest word in a sentence
+
+$s="this is perl practice session";
+@a1=split(/ /,$s);
+$t="";
+foreach my $i(@a1)
+
+{
+   if (length($i)>length($t))
+   {
+       $t=$i;
+   }
+}
+print "longest word: $t\n";
