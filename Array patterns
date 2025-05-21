@@ -24,3 +24,32 @@ while (@even || @odd) {
 
 # Print the rearranged array
 print "(" . join(", ", @result) . ")\n";
+
+
+# Method 2:
+
+@a1=(1,2,3,4,5,6,7,8,9,10);
+
+# [10,1,8,3,6,5,4,7,2,9]
+
+@a2=grep{$_%2==0}@a1;
+@a3=grep{$_%2!=0}@a1;
+
+@a2=sort{$b<=>$a}@a2;
+@a3=sort{$a<=>$b}@a3;
+
+@a4=();
+
+while(@a2||@a3)
+{
+    if(@a2)
+    {
+        push @a4, shift @a2;
+    }
+    if(@a3)
+    {
+        push @a4, shift @a3;
+    }
+}
+
+print "@a4\n";
