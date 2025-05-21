@@ -1,0 +1,15 @@
+# Remove duplicate elements in array
+
+@a1=();
+while(1)
+{
+    print "enter number: \n";
+    chomp(my $n=<STDIN>);
+    last if $n eq 'q';
+    push (@a1,$n);
+}
+print "entered numbers are: @a1 \n";
+
+my %h;
+@a2= grep{!$h{$_}++} @a1;
+print "after duplicates removal: @a2 \n";
