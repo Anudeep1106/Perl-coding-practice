@@ -1,0 +1,20 @@
+# creating Employee class and printing name & salary 
+
+
+package Employee;
+
+sub new
+{
+    my($class, $name, $salary) = @_;
+    bless{name=>$name, salary=>$salary}, $class;
+}
+
+sub display
+{
+    my $self=shift;
+    print "Name: $self->{name}, Salary: $self->{salary}\n";
+}
+
+package main;
+my $emp=Employee->new('alice', 10000);
+$emp->display();
