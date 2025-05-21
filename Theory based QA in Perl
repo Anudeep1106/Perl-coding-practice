@@ -1,0 +1,73 @@
+# Theory based topics in Perl
+
+@a1=(1,2,3);
+$a=/@a1;
+
+
+This creates a reference to the array @a1 and assigns it to the scalar variable $a.
+
+\@a1 is the reference to the array @a1. It essentially points to the array in memory, rather than holding a copy of the array itself.
+
+The variable $a will now hold a scalar value, but this scalar value is not a regular scalar — it's a reference to the array @a1.
+
+print "@$a\n";  # Prints 1 2 3
+
+--------------------------------------------------------------------------------------------------------------------------------
+
+Key Differences Between while(<FILE>) and foreach(<FILE>):
+
+Memory Usage:
+
+while(<FILE>): Reads the file line by line, which is more memory-efficient for large files. It doesn't load the whole file into memory at once.
+
+foreach(<FILE>): Reads the entire file into memory and iterates over it, which could be inefficient for large files as it requires more memory.
+
+File Handle Handling:
+
+while(<FILE>) operates directly on the file handle and processes the file one line at a time.
+
+foreach(<FILE>) reads the entire file into memory before processing it, which can cause higher memory consumption with large files.
+
+Performance:
+
+For large files, while(<FILE>) is generally better because it processes the file line-by-line.
+It doesn't require loading the entire file into memory, which can improve performance and avoid running into memory issues.
+
+For smaller files or when you need the whole file in memory (e.g., for random access or further processing), foreach(<FILE>) is fine.
+
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+use: For loading modules and pragmas at compile time. It also imports variables/functions from modules automatically.
+
+require: For loading modules at runtime. It gives you more flexibility, but you need to manually import functions/variables and handle things like error checking yourself.
+
+-----------------------------------------------------------------------------------------------------------------------------------------------
+
+1; is the correct return value at the end of a Perl module to signal successful loading.
+
+0; will not work because 0 is false in Perl, and Perl will consider the module as failed if it returns 0.
+
+Always use 1; at the end of the module to indicate success and avoid errors when loading with use or require.
+
+Non-empty string (ok, "success", etc.): These are treated as true because they are non-empty strings.
+
+Example: ok; works, and Perl will load the module successfully.
+
+Empty string (''): Treated as false and will cause an error when use or require is called.
+
+Example: ''; causes the module to fail to load.
+-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+chop: Removes the last character of a string.
+
+chomp: Removes the trailing newline character from a string
+
+-------------------------------------------------------------------------------------------------------------------------------------------
+
+In Perl, $1 is a special variable that holds the first captured group from the most recent regular expression match.
+--------------------------------------------------------------------------------------------------------------------------------------------
+
+bless $self, $class tells Perl:
+“Treat this hash reference as an object of class Person.”
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
