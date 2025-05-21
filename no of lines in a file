@@ -1,0 +1,16 @@
+# no of lines in a file
+
+
+print "enter file name\n";
+
+chomp(my $f=<STDIN>);
+
+open(FILE,"$f") or die "cant open file: $!\n";
+$c=0;
+while(<FILE>)
+{
+    $c++ foreach $_;
+}
+close(FILE);
+
+print "no of lines in file are: $c\n";
