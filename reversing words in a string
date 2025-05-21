@@ -1,0 +1,17 @@
+ # reversing words in a string
+
+print "enter a string\n";
+
+chomp(my $s=<STDIN>);
+
+@a1=split / /, $s;
+@a2=();
+foreach my $i(@a1)
+{
+    $i=reverse $i;
+    push @a2, $i;
+}
+
+$rev=join " ", @a2;
+
+print "$rev\n";
